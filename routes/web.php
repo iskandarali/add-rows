@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Requests\ProfileRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::post('/', function (ProfileRequest $request) {
+    dd($request->all());
+})->name('profile.store');
