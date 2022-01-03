@@ -24,9 +24,10 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
             'profiles' => 'array|max:5',
-            'profiles.*.name' => ['required','max:500'],
-            'profiles.*.email' => 'required|email|max:500',
+            'profiles.*.title' => ['required','max:500'],
+            'profiles.*.body' => 'required|max:500',
         ];
     }
 }

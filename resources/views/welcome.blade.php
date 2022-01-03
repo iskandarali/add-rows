@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="container mt-5">
-        @livewire('profiles')
         @livewire('hello-world')
     </div>
 

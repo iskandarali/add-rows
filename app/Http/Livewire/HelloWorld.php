@@ -2,17 +2,32 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Profile;
 use Livewire\Component;
 
 class HelloWorld extends Component
 {
-    public $name = 'Iskandar Ali';
-    public $loud = false;
-    public $greeting = ['Hello'];
+    public $profiles = [];
+    public $product = [];
 
-    public function resetName($name = 'Iskandar Ali')
+    public function mount(array $profiles)
     {
-        $this->name = $name;
+        $this->profiles = old('title', $profiles);
+
+        $this->profiles = [
+            ['title' => '', 'body' => '']
+        ];
+    }
+
+    public function addProduct()
+    {
+        $this->profiles[] = ['title' => '', 'body' => ''];
+    }
+
+    public function removeProduct($index)
+    {
+        unset($this->profiles[$index]);
+        $this->profiles = array_values($this->profiles);
     }
 
     public function render()
