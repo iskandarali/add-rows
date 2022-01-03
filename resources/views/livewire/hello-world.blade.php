@@ -11,4 +11,8 @@
     @if ($loud)
         !
     @endif
+
+    <form action="#" wire:submit.prevent="resetName('Hermantino')">
+        <button>Reset Name</button>
+    </form>
 </div>
